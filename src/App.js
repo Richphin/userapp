@@ -14,6 +14,12 @@ function adduser(user) {
   
 }
 
+function deleteuser(id) {
+  let newUsers = users.filter((user) => user.id !==id);
+  console.log(newUsers)
+  setUsers(newUsers)
+}
+
   return (
     <div className="container">
       <div className="row">
@@ -22,7 +28,7 @@ function adduser(user) {
         </div>
         <div className="col-md-6">
           <h2 className="users">USER(S)</h2>
-          <Userlist allUsers={users}/>
+          <Userlist allUsers={users} delete={deleteuser}/>
         </div>
       </div>
     </div>
