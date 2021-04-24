@@ -19,6 +19,15 @@ function deleteuser(id) {
   console.log(newUsers)
   setUsers(newUsers)
 }
+function updateuser(id, updatedUserInfo) {
+  let newUsers = users.map((user) => {
+    if (user.id ===id) {
+      return updatedUserInfo;
+    }
+    return user;
+  })
+  setUsers(newUsers);
+}
 
   return (
     <div className="container">
@@ -28,7 +37,7 @@ function deleteuser(id) {
         </div>
         <div className="col-md-6">
           <h2 className="users">USER(S)</h2>
-          <Userlist allUsers={users} delete={deleteuser}/>
+          <Userlist allUsers={users} delete={deleteuser} updateuser={updateuser}/>
         </div>
       </div>
     </div>
