@@ -1,4 +1,7 @@
 import { useState } from "react"
+import { connect } from "react-redux";
+import addUser from "../actions/userAction";
+
 
 function Userform(props) {
     const [state,setstate] =useState({
@@ -18,7 +21,7 @@ function Userform(props) {
     function handleonSubmit() {
         let userId = 10000 + Math.random() * 10000000;
         let user = { ...state, id: userId}
-        props.adduser(user);
+        props.addUser(user);
     }
 
 return(
@@ -49,4 +52,4 @@ return(
 
 
 }
-export default Userform
+export default  connect(null, {addUser})(Userform)
