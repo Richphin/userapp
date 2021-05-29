@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { Modal, ModalBody } from "react-bootstrap"
 import Edituserform from "./EditUserForm"
+import { connect } from "react-redux";
+import {deleteUser} from "../actions/userAction";
 
 function UserItem(props) {
     const [displaymodal,setshowmodal] =useState(false);
@@ -27,7 +29,6 @@ function UserItem(props) {
                     <Modal.Body>
                         <Edituserform
                             user={props.user}
-                            updateuser={props.updateuser}
                             hideModal={hideModal}
                         />
                     </Modal.Body>
@@ -38,7 +39,7 @@ function UserItem(props) {
 
 
 
-               <button className="deletebtn" onClick={() => {props.delete(props.user.id)}}>Delete</button>
+               <button className="deletebtn" onClick={() => {props.deleteUser(props.user.id)}}>Delete</button>
            </div>
         </div>
     )
@@ -46,4 +47,10 @@ function UserItem(props) {
     
     
     }
-    export default UserItem
+    let mapDispatchToProps= {
+            deleteUser,
+    }
+    let mapStateToProps = () =>{}
+
+    export default connect(mapStateToProps, mapDispatchToProps)(UserItem)
+    

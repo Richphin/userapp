@@ -6,7 +6,7 @@ function Userlist(props) {
     
     return(
         <div>
-            {props.users.map((user) => (<UserItem user={user} delete={props.delete} updateuser={props.updateuser}/>))}
+            {props.users.map((user) => (<UserItem user={user}  />))}
            
         </div>
     )
