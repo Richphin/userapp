@@ -1,25 +1,23 @@
 
-import Userform from './usercomponents/form';
-import Userlist from './usercomponents/userlist';
+import { BrowserRouter,Switch,Route } from "react-router-dom";
+import Dashboard from "./pages/dashboard";
+import Login from "./pages/login";
+import Signup from "./pages/signup";
+
 
 
 function App() {
   
-
-
-
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6 formcontainer" style={{ backgroundImage: "url(/images/barcelona-morning-sky.jpg)" }}>
-          <Userform />
-        </div>
-        <div className="col-md-6">
-          <h2 className="users">USER(S)</h2>
-          <Userlist/>
-        </div>
-      </div>
-    </div>
+    <BrowserRouter>
+            
+            <Switch>
+                <Route exact path="/" component={Dashboard}/>
+                <Route path="/login" component={Login}/>
+                <Route path="/signup" component={Signup}/>
+                
+            </Switch>
+        </BrowserRouter>
   );
 }
 
