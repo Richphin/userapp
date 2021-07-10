@@ -43,10 +43,7 @@ export  function deleteUser(id) {
             console.log(error);
         }
     } 
-    //  return{
-    //     type:"DELETE_USER",
-    //     payload: id
-    //  }
+
  }
  
  export  function updateUser(id,updateduser) {
@@ -58,10 +55,6 @@ export  function deleteUser(id) {
             console.log(error);
         }
     }
-     
-    // return{
-    //    type:"UPDATE_USER",
-    //    payload:{id:id, updatedUserInfo:updateduser}
-    // }
+
 }
  

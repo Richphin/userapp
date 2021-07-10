@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
  
 const Allreducers =combineReducers({
     userState:usersReducer,
-    firebasestate: firebaseReducer,
+    firebaseState: firebaseReducer,
 })
 
  export const store = createStore(Allreducers,compose(
